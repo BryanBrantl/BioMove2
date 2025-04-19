@@ -3,43 +3,40 @@ import os
 
 st.set_page_config(page_title="Projeto BioMove", layout="wide")
 
-
 abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cronograma"])
 
 with abas[0]:
-st.title("BioMove – Carrinho Controlado por Sinais EMG para Fisioterapia Interativa")
+    st.title("BioMove – Carrinho Controlado por Sinais EMG para Fisioterapia Interativa")
 
-colunas = st.columns(4)
-        fotos = ["image/foto_01.png", "image/foto_02.png", "image/foto_03.png", "image/foto_04.png"]
-        
-        colunas = st.columns(4)
-        fotos = ["image/foto_01.png", "image/foto_02.png", "image/foto_03.png", "image/foto_04.png"]
-        nomes = [
-                ("Bryan A. L. Brantl", "2414139", "brantl@alunos.utfpr.edu.br", "(41) 99278-3929"),
-                ("João Roberto Klassen", "2414XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
-                ("Leonardo Amancio", "240XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
-                ("Luiz Eduardo Prado de Oliveira", "2402629", "luizoliveira.2002@alunos.utfpr.edu.br", "(41) 99815-6532")
-                ]
-        
-        for col, foto, (nome, ra, email, tel) in zip(colunas, fotos, nomes):
-            with col:
-                st.image(foto, width=500)
-                st.markdown(f"""
-                    <div style='text-align: center;'>
-                        <p><b>{nome}</b></p>
-                        <p>RA: {ra}</p>
-                        <p>Email: {email}</p>
-                        <p>Contato: {tel}</p>
-                    </div>
-                """, unsafe_allow_html=True)
+    colunas = st.columns(4)
+    fotos = ["image/foto_01.png", "image/foto_02.png", "image/foto_03.png", "image/foto_04.png"]
+    nomes = [
+        ("Bryan A. L. Brantl", "2414139", "brantl@alunos.utfpr.edu.br", "(41) 99278-3929"),
+        ("João Roberto Klassen", "2414XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
+        ("Leonardo Amancio", "240XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
+        ("Luiz Eduardo Prado de Oliveira", "2402629", "luizoliveira.2002@alunos.utfpr.edu.br", "(41) 99815-6532")
+    ]
 
-col1, col2 = st.columns([1, 2])
+    for col, foto, (nome, ra, email, tel) in zip(colunas, fotos, nomes):
+        with col:
+            st.image(foto, width=500)
+            st.markdown(f"""
+                <div style='text-align: center;'>
+                    <p><b>{nome}</b></p>
+                    <p>RA: {ra}</p>
+                    <p>Email: {email}</p>
+                    <p>Contato: {tel}</p>
+                </div>
+            """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns([1, 2])
     with col1:
         st.image("image/gif3.gif", caption="GIF 1", use_container_width=True)
     with col2:
-    st.header("O BioMove é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os "
-            "movimentos de um carrinho robô. O objetivo principal é oferecer uma forma lúdica e engajadora de fisioterapia muscular," 
-            "especialmente para pacientes em reabilitação motora.")
+        st.header("O BioMove é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os "
+                  "movimentos de um carrinho robô. O objetivo principal é oferecer uma forma lúdica e engajadora de fisioterapia muscular,"
+                  "especialmente para pacientes em reabilitação motora.")
+
 
     
 
