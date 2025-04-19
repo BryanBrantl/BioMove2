@@ -19,7 +19,7 @@ st.markdown("""
             padding: 40px 20px;
         }
         .custom-gif {
-            max-width: 350px;
+            max-width: 200px;
             border-radius: 10px;
             box-shadow: 0 0 10px #00ffff55;
         }
