@@ -39,7 +39,7 @@ abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cron
 
 with abas[0]:
     st.title("BioMove – Carrinho Controlado por Sinais EMG para Fisioterapia Interativa")
-
+    st.image("image/gif3.gif", caption="Teste de GIF", use_container_width=False)
     st.markdown("""
         <div class="custom-section">
             <img src="image/gif3.gif" class="custom-gif" alt="GIF de sinal EMG">
