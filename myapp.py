@@ -10,28 +10,28 @@ with abas[0]:
 st.title("BioMove – Carrinho Controlado por Sinais EMG para Fisioterapia Interativa")
 
 colunas = st.columns(4)
-fotos = ["image/foto_01.png", "image/foto_02.png", "image/foto_03.png", "image/foto_04.png"]
-
-colunas = st.columns(4)
-fotos = ["image/foto_01.png", "image/foto_02.png", "image/foto_03.png", "image/foto_04.png"]
-nomes = [
-        ("Bryan A. L. Brantl", "2414139", "brantl@alunos.utfpr.edu.br", "(41) 99278-3929"),
-        ("João Roberto Klassen", "2414XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
-        ("Leonardo Amancio", "240XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
-        ("Luiz Eduardo Prado de Oliveira", "2402629", "luizoliveira.2002@alunos.utfpr.edu.br", "(41) 99815-6532")
-        ]
-
-for col, foto, (nome, ra, email, tel) in zip(colunas, fotos, nomes):
-    with col:
-        st.image(foto, width=500)
-        st.markdown(f"""
-            <div style='text-align: center;'>
-                <p><b>{nome}</b></p>
-                <p>RA: {ra}</p>
-                <p>Email: {email}</p>
-                <p>Contato: {tel}</p>
-            </div>
-        """, unsafe_allow_html=True)
+        fotos = ["image/foto_01.png", "image/foto_02.png", "image/foto_03.png", "image/foto_04.png"]
+        
+        colunas = st.columns(4)
+        fotos = ["image/foto_01.png", "image/foto_02.png", "image/foto_03.png", "image/foto_04.png"]
+        nomes = [
+                ("Bryan A. L. Brantl", "2414139", "brantl@alunos.utfpr.edu.br", "(41) 99278-3929"),
+                ("João Roberto Klassen", "2414XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
+                ("Leonardo Amancio", "240XXX", "email@alunos.utfpr.edu.br", "41 992783929"),
+                ("Luiz Eduardo Prado de Oliveira", "2402629", "luizoliveira.2002@alunos.utfpr.edu.br", "(41) 99815-6532")
+                ]
+        
+        for col, foto, (nome, ra, email, tel) in zip(colunas, fotos, nomes):
+            with col:
+                st.image(foto, width=500)
+                st.markdown(f"""
+                    <div style='text-align: center;'>
+                        <p><b>{nome}</b></p>
+                        <p>RA: {ra}</p>
+                        <p>Email: {email}</p>
+                        <p>Contato: {tel}</p>
+                    </div>
+                """, unsafe_allow_html=True)
 
 col1, col2 = st.columns([1, 2])
     with col1:
