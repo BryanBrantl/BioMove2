@@ -19,13 +19,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Carrega a imagem com st.image para garantir que o arquivo esteja disponível
-st.image("image/gif3.gif", caption="(Pré-carregamento do GIF)", use_column_width=False)
+# Pré-carregamento da imagem (para garantir que apareça corretamente)
+st.image("image/gif3.gif", caption="(Pré-carregamento do GIF)", use_container_width=False)
 
-# Mostra o GIF com estilo HTML (centralizado e com sombra)
+# Exibição estilizada do GIF com HTML
 st.markdown('<div class="centered"><img src="image/gif3.gif" class="custom-img"></div>', unsafe_allow_html=True)
 
-# Descrição ou conteúdo adicional
+# Texto descritivo
 st.markdown("""
 <p style="text-align: justify;">
 <b>O BioMove</b> é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os movimentos de um carrinho robô. O objetivo principal é oferecer uma forma <span style="color:#00ffff;">lúdica</span> e <span style="color:#00ffff;">engajadora</span> de fisioterapia muscular, especialmente para pacientes em <span style="color:#00ffff;">reabilitação motora</span>.
