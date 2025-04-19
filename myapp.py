@@ -1,55 +1,36 @@
 import streamlit as st
-import os
 
-st.set_page_config(page_title="Projeto BioMove", layout="wide")
+# Título ou seção
+st.markdown("## Interativa")
 
-# Estilo customizado para dark mode e centralização
+# Estilo customizado
 st.markdown("""
     <style>
-        body {
-            background-color: #0e1117;
-            color: #ffffff;
-        }
-        .custom-section {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            padding: 40px 20px;
-        }
-        .custom-gif {
-            max-width: 200px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #00ffff55;
-        }
-        .custom-text {
-            max-width: 600px;
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-        .custom-text strong {
-            color: #00ffff;
-        }
+    .centered {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .custom-img {
+        border-radius: 12px;
+        box-shadow: 0 0 15px #00ffff66;
+        width: 200px;
+    }
     </style>
 """, unsafe_allow_html=True)
 
-abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cronograma"])
+# Carrega a imagem com st.image para garantir que o arquivo esteja disponível
+st.image("image/gif3.gif", caption="(Pré-carregamento do GIF)", use_column_width=False)
 
-with abas[0]:
-    st.title("BioMove – Carrinho Controlado por Sinais EMG para Fisioterapia Interativa")
-    st.image("image/gif3.gif", caption="Teste de GIF", use_container_width=False)
-    st.markdown("""
-        <div class="custom-section">
-            <img src="image/gif3.gif" class="custom-gif" alt="GIF de sinal EMG">
-            <div class="custom-text">
-                <p><strong>O BioMove</strong> é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos)
-                para controlar os movimentos de um carrinho robô. O objetivo principal é oferecer uma forma <strong>lúdica</strong> 
-                e <strong>engajadora</strong> de fisioterapia muscular, especialmente para pacientes em <strong>reabilitação motora</strong>.</p>
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
+# Mostra o GIF com estilo HTML (centralizado e com sombra)
+st.markdown('<div class="centered"><img src="image/gif3.gif" class="custom-img"></div>', unsafe_allow_html=True)
+
+# Descrição ou conteúdo adicional
+st.markdown("""
+<p style="text-align: justify;">
+<b>O BioMove</b> é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os movimentos de um carrinho robô. O objetivo principal é oferecer uma forma <span style="color:#00ffff;">lúdica</span> e <span style="color:#00ffff;">engajadora</span> de fisioterapia muscular, especialmente para pacientes em <span style="color:#00ffff;">reabilitação motora</span>.
+</p>
+""", unsafe_allow_html=True)
 
 
     
