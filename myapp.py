@@ -1,8 +1,12 @@
 import streamlit as st
+import base64
+
 
 # Título ou seção
 st.markdown("## Projeto")
 abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cronograma"])
+
+
 # Estilo customizado
 st.markdown("""
     <style>
@@ -19,10 +23,28 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Pré-carregamento da imagem (para garantir que apareça corretamente)
-st.image("image/gif3.gif", caption="(Pré-carregamento do GIF)", use_container_width=False)
 
-# Exibição estilizada do GIF com HTML
+
+
+
+file_path = "image/gif3.gif"
+with open(file_path, "rb") as f:
+    data = f.read()
+    encoded_gif = base64.b64encode(data).decode("utf-8")
+
+# Exibe o GIF redondo
+st.markdown(
+    f"""
+    <div style="display: flex; justify-content: center;">
+        <img src="data:image/gif;base64,{encoded_gif}"
+             style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;"
+             alt="GIF redondo">
+    </div>
+    <p style="text-align: center;">(Pré-carregamento do GIF)</p>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Texto descritivo
 st.markdown("""
