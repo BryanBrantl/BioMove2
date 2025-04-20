@@ -2,7 +2,7 @@ import streamlit as st
 
 # Título ou seção
 st.markdown("## Projeto")
-
+abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cronograma"])
 # Estilo customizado
 st.markdown("""
     <style>
