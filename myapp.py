@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Título ou seção
-st.markdown("## Interativa")
+st.markdown("## Projeto")
 
 # Estilo customizado
 st.markdown("""
