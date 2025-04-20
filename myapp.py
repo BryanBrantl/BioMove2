@@ -23,7 +23,6 @@ st.markdown("""
 st.image("image/gif3.gif", caption="(Pré-carregamento do GIF)", use_container_width=False)
 
 # Exibição estilizada do GIF com HTML
-st.markdown('<div class="centered"><img src="image/gif3.gif" class="custom-img"></div>', unsafe_allow_html=True)
 
 # Texto descritivo
 st.markdown("""
