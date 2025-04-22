@@ -7,52 +7,27 @@ st.markdown("## Projeto")
 abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cronograma"])
 
 
-# Estilo customizado
-st.markdown("""
-    <style>
-    .centered {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-    .custom-img {
-        border-radius: 12px;
-        box-shadow: 0 0 15px #54FF9F;
-        width: 200px;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# Carrega o arquivo de estilo customizado
+with open("assets/styles.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+# Vetor com os GIFs
+gifs = ["image/gif1.gif", "image/gif2.gif", "image/gif3.gif"]
 
+# Exibe os GIFs um a um com o estilo aplicado
+for gif in gifs:
+    with open(gif, "rb") as f:
+        data = f.read()
+        encoded_gif = base64.b64encode(data).decode("utf-8")
 
-
-
-file_path = "image/gif3.gif"
-with open(file_path, "rb") as f:
-    data = f.read()
-    encoded_gif = base64.b64encode(data).decode("utf-8")
-
-# Exibe o GIF redondo
-st.markdown(
-    f"""
-    <div style="display: flex; justify-content: center;">
-        <img src="data:image/gif;base64,{encoded_gif}"
-             style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;"
-             alt="GIF redondo">
-    </div>
-    <p style="text-align: center;">(Pré-carregamento do GIF)</p>
-    """,
-    unsafe_allow_html=True
-)
-
-
-# Texto descritivo
-st.markdown("""
-<p style="text-align: justify;">
-<b>O BioMove</b> é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os movimentos de um carrinho robô. O objetivo principal é oferecer uma forma <span style="color:#54FF9F;">lúdica</span> e <span style="color:#54FF9F;">engajadora</span> de fisioterapia muscular, especialmente para pacientes em <span style="color:#54FF9F;">reabilitação motora</span>.
-</p>
-""", unsafe_allow_html=True)
-
+    st.markdown(
+        f"""
+        <div class="centered">
+            <img src="data:image/gif;base64,{encoded_gif}" class="custom-img" alt="GIF">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     
 
