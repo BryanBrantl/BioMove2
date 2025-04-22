@@ -61,7 +61,7 @@ st.markdown(
              style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;"
              alt="GIF redondo">
     </div>
-    <p style="text-align: center;">(Pré-carregamento do GIF)</p>
+    <p style="text-align: center;">(GIF)</p>
     """,
     unsafe_allow_html=True
 )
