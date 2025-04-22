@@ -2,33 +2,23 @@ import streamlit as st
 import base64
 
 
-# Título ou seção
-st.markdown("## Projeto")
-abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cronograma"])
-
-
-# Carrega o arquivo de estilo customizado
+# Carrega o CSS externo uma vez
 with open("assets/styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# Vetor com os GIFs
-gifs = ["image/gif3.gif", "image/gif3.gif", "image/gif3.gif"]
+def bloco_gif_texto(gif_path, titulo, descricao):
+    with open(gif_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode("utf-8")
 
-# Exibe os GIFs um a um com o estilo aplicado
-for gif in gifs:
-    with open(gif, "rb") as f:
-        data = f.read()
-        encoded_gif = base64.b64encode(data).decode("utf-8")
-
-    st.markdown(
-        f"""
-        <div class="centered">
-            <img src="data:image/gif;base64,{encoded_gif}" class="custom-img" alt="GIF">
+    st.markdown(f"""
+    <div class="gif-bloco">
+        <img src="data:image/gif;base64,{encoded}" />
+        <div class="texto">
+            <h4>{titulo}</h4>
+            <p>{descricao}</p>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
-
+    </div>
+    """, unsafe_allow_html=True)
     
 st.markdown("""
 <div style="display: flex; align-items: center; margin: 20px 0;">
