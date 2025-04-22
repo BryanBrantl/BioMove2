@@ -3,8 +3,21 @@ import base64
 
 col1, col2 = st.columns([1, 2])
 with col1:
-    st.image("image/gif3.gif", use_container_width=True)
-
+    col1.markdown(
+        """
+        <style>
+        .circular-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+        </style>
+        <img src="image/gif3.gif" class="circular-img">
+        """,
+        unsafe_allow_html=True
+    )
 with col2:
     st.markdown("### Título")
     st.write("Texto explicando o conteúdo do GIF. Pode ser qualquer explicação curta ou longa.")
