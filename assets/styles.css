@@ -1,0 +1,13 @@
+/* Estilo customizado */
+
+.centered {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-img {
+    border-radius: 12px;
+    box-shadow: 0 0 15px #54FF9F;
+    width: 200px;
+}
