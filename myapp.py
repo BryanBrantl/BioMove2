@@ -42,7 +42,7 @@ st.markdown("""
     }
     .custom-img {
         border-radius: 12px;
-        box-shadow: 0 0 15px #54FF9F;
+        box-shadow: 0 0 15px #DC143C;
         width: 200px;
     }
     </style>
@@ -69,6 +69,6 @@ st.markdown(
 # Texto descritivo
 st.markdown("""
 <p style="text-align: justify;">
-<b>O BioMove</b> é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os movimentos de um carrinho robô. O objetivo principal é oferecer uma forma <span style="color:#54FF9F;">lúdica</span> e <span style="color:#54FF9F;">engajadora</span> de fisioterapia muscular, especialmente para pacientes em <span style="color:#54FF9F;">reabilitação motora</span>.
+<b>O BioMove</b> é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os movimentos de um carrinho robô. O objetivo principal é oferecer uma forma <span style="color:#DC143C;">lúdica</span> e <span style="color:#DC143C;">engajadora</span> de fisioterapia muscular, especialmente para pacientes em <span style="color:#DC143C;">reabilitação motora</span>.
 </p>
 """, unsafe_allow_html=True)
