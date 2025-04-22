@@ -1,31 +1,57 @@
 import streamlit as st
 import base64
 
-import streamlit as st
 
-col1, col2 = st.columns([1, 2])  # ajuste a proporção conforme necessário
+# Título ou seção
+st.markdown("## Projeto")
+abas = st.tabs(["Home", "BioMove", "Atualização Semanal", "Relatórios", "Cronograma"])
 
-with col1:
-    st.markdown(
-        """
-        <style>
-        .circular-img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: auto;
-        }
-        </style>
-        <img src="image/gif3.gif" class="circular-img">
-        """,
-        unsafe_allow_html=True
-    )
 
-with col2:
-    st.markdown("### Título")
-    st.write("Texto explicando o conteúdo do GIF. Pode ser qualquer explicação curta ou longa.")
+# Estilo customizado
+st.markdown("""
+    <style>
+    .centered {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .custom-img {
+        border-radius: 12px;
+        box-shadow: 0 0 15px #54FF9F;
+        width: 200px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+
+
+file_path = "image/gif3.gif"
+with open(file_path, "rb") as f:
+    data = f.read()
+    encoded_gif = base64.b64encode(data).decode("utf-8")
+
+# Exibe o GIF redondo
+st.markdown(
+    f"""
+    <div style="display: flex; justify-content: center;">
+        <img src="data:image/gif;base64,{encoded_gif}"
+             style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;"
+             alt="GIF redondo">
+    </div>
+    <p style="text-align: center;">(Pré-carregamento do GIF)</p>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# Texto descritivo
+st.markdown("""
+<p style="text-align: justify;">
+<b>O BioMove</b> é um sistema terapêutico interativo que utiliza sinais EMG (eletromiográficos) para controlar os movimentos de um carrinho robô. O objetivo principal é oferecer uma forma <span style="color:#54FF9F;">lúdica</span> e <span style="color:#54FF9F;">engajadora</span> de fisioterapia muscular, especialmente para pacientes em <span style="color:#54FF9F;">reabilitação motora</span>.
+</p>
+""", unsafe_allow_html=True)
 
 # Título e textos padrão
 #st.title("🌈 Título com Emoji")
