@@ -1,9 +1,12 @@
 import streamlit as st
 import base64
 
-col1, col2 = st.columns([1, 2])
+import streamlit as st
+
+col1, col2 = st.columns([1, 2])  # ajuste a proporção conforme necessário
+
 with col1:
-    col1.markdown(
+    st.markdown(
         """
         <style>
         .circular-img {
@@ -12,16 +15,17 @@ with col1:
             border-radius: 50%;
             object-fit: cover;
             display: block;
+            margin: auto;
         }
         </style>
         <img src="image/gif3.gif" class="circular-img">
         """,
         unsafe_allow_html=True
     )
+
 with col2:
     st.markdown("### Título")
     st.write("Texto explicando o conteúdo do GIF. Pode ser qualquer explicação curta ou longa.")
-
 
 # Título e textos padrão
 #st.title("🌈 Título com Emoji")
