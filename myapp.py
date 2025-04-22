@@ -30,6 +30,16 @@ for gif in gifs:
     )
 
     
+st.markdown("""
+<div style="display: flex; align-items: center; margin: 20px 0;">
+    <img src="data:image/gif;base64,{encoded_gif}" style="width: 150px; border-radius: 8px; margin-right: 20px;">
+    <div>
+        <h4 style="margin-bottom: 5px;">Título do GIF</h4>
+        <p style="margin: 0;">Esse é um texto descritivo que explica o que está acontecendo no GIF.</p>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 
 # Título e textos padrão
 #st.title("🌈 Título com Emoji")
