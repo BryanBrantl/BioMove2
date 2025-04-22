@@ -1,23 +1,14 @@
 import streamlit as st
 import base64
 
-# Carrega o CSS externo uma vez
-with open("assets/styles.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+with col1:
+    st.image("image/gif3.gif", use_column_width=True)
 
-def bloco_gif_texto(gif_path, titulo, descricao):
-    with open(gif_path, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode("utf-8")
+with col2:
+    st.markdown("### Título")
+    st.write("Texto explicando o conteúdo do GIF. Pode ser qualquer explicação curta ou longa.")
 
-    st.markdown(f"""
-    <div class="gif-bloco">
-        <img src="data:image/gif;base64,{encoded}" />
-        <div class="texto">
-            <h4>{titulo}</h4>
-            <p>{descricao}</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+
 # Título e textos padrão
 #st.title("🌈 Título com Emoji")
 #st.header("Header com estilo normal")
