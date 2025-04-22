@@ -32,7 +32,7 @@ for gif in gifs:
     
 st.markdown("""
 <div style="display: flex; align-items: center; margin: 20px 0;">
-    <img src="data:image/gif;base64,{encoded_gif}" style="width: 150px; border-radius: 8px; margin-right: 20px;">
+    <img src="data:image/gif3;base64,{encoded_gif}" style="width: 150px; border-radius: 8px; margin-right: 20px;">
     <div>
         <h4 style="margin-bottom: 5px;">Título do GIF</h4>
         <p style="margin: 0;">Esse é um texto descritivo que explica o que está acontecendo no GIF.</p>
@@ -40,6 +40,19 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+gifs = ["image/gif1.gif", "image/gif2.gif", "image/gif3.gif"]
+
+opcao = st.selectbox("Escolha um GIF para visualizar:", gifs)
+
+with open(opcao, "rb") as f:
+    data = f.read()
+    encoded_gif = base64.b64encode(data).decode("utf-8")
+
+st.markdown(f"""
+<div class="centered">
+    <img class="custom-img" src="data:image/gif;base64,{encoded_gif}" />
+</div>
+""", unsafe_allow_html=True)
 
 # Título e textos padrão
 #st.title("🌈 Título com Emoji")
