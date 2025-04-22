@@ -12,7 +12,7 @@ with open("assets/styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Vetor com os GIFs
-gifs = ["image/gif1.gif", "image/gif2.gif", "image/gif3.gif"]
+gifs = ["image/gif1.gif", "image/gif1.gif", "image/gif1.gif"]
 
 # Exibe os GIFs um a um com o estilo aplicado
 for gif in gifs:
